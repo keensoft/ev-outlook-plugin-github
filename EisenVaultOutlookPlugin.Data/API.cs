@@ -30,6 +30,9 @@ namespace EisenVaultOutlookPlugin.Data
             }
             try
             {
+
+                System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+
                 using (var client = new HttpClient())
                 {
                     client.Timeout = new TimeSpan(1, 0, 0); // 1 hour
@@ -60,8 +63,12 @@ namespace EisenVaultOutlookPlugin.Data
         public static async Task<string> Auth(string url,string username,string password)
         {            
             var content = new StringContent($"{{\"userId\": \"{username}\",\"password\": \"{password}\"}}", Encoding.UTF8, "application/json");
+
             try
             {
+                
+                System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+
                 using (var client = new HttpClient())
                 {
                     client.Timeout = new TimeSpan(1, 0, 0);// 1 hour
@@ -96,6 +103,9 @@ namespace EisenVaultOutlookPlugin.Data
             string password = userInfo.Password;
             try
             {
+                
+                System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+
                 using (var client = new HttpClient())
                 {
                     client.Timeout = new TimeSpan(1, 0, 0); // 1 hour
@@ -146,6 +156,9 @@ namespace EisenVaultOutlookPlugin.Data
             string password = userInfo.Password;
             try
             {
+                
+                System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+
                 using (var client = new HttpClient())
                 {
                     client.Timeout = new TimeSpan(1, 0, 0); // 1 hour

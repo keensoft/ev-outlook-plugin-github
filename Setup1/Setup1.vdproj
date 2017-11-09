@@ -806,7 +806,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.14"
+        "ProductVersion" = "8:1.0.15"
         "Manufacturer" = "8:EisenVault"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

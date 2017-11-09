@@ -7,4 +7,4 @@ Released under GNU LGPLv3. Please write to us at contact@eisenvault.com with any
 
 Visit us at https://www.eisenvault.com
 
-Note: This only works with trusted SSL Certificates (not self signed ones) and this does not work with Alfresco Cloud (my.alfresco.com).
+Note: This also works with self-signed certificates and trusted SSL Certificates (not self signed ones). This does not work with Alfresco Cloud (my.alfresco.com).
