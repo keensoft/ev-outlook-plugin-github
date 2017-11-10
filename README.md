@@ -8,3 +8,14 @@ Released under GNU LGPLv3. Please write to us at contact@eisenvault.com with any
 Visit us at https://www.eisenvault.com
 
 Note: This also works with self-signed certificates and trusted SSL Certificates (not self signed ones). This does not work with Alfresco Cloud (my.alfresco.com).
+
+# Patching instructions
+
+In order to allow self-signed certificates for HTTPs Alfresco servers, you can install the product as is. Once it's working, you can replace the patched DDL `EisenVaultOutlookPlugin.Data.dll` available in ZIP format at `Installer-Binaries` directory
+
+Following instructions are only seudo-code, they do not work at all. Just only for further explanation on the patching process.
+
+```
+$ unzip ev-outlook-plugin-github/Installer-Binaries/EisenVaultOutlookPlugin.Data.dll-patched.zip
+$ cp ev-outlook-plugin-github/Installer-Binaries/EisenVaultOutlookPlugin.Data.dll C:\Program Files\EisenVault Outlook Plugin
+```
