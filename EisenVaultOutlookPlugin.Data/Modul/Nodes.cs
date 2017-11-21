@@ -19,9 +19,9 @@ namespace EisenVaultOutlookPlugin.Data.Modul
             {
                 string urlPath = $"alfresco/api/-default-/public/alfresco/versions/1/nodes/{nodeId}/children?maxItems=10000";
                 string text = await API.Get(urlPath);
+                LogClass.WriteException("Get", "Json", "Text: " + text);
                 if (string.IsNullOrEmpty(text))
                 {
-
                 }
                 else
                 {
@@ -29,11 +29,23 @@ namespace EisenVaultOutlookPlugin.Data.Modul
                     if (jsonresult.error != null)
                     {
                         Error = jsonresult.error.errorKey;
+                        LogClass.WriteException("Get", "Json", "Error:" + jsonresult.error);
                     }
                     else
                     {
                         var nodeList = jsonresult.list;
                         list.AddRange(nodeList.entries.Select(c => c.entry));
+                        foreach (NodeEntry entry in list) {
+                            if (entry.name == "Sitios") {
+                                entry.name = "Sites";
+                            }
+                            if (entry.name == "Compartido") {
+                                entry.name = "Shared";
+                            }
+                            if (entry.name == "Espacios personales de usuario") {
+                                entry.name = "User Homes";
+                            }
+                        }
                     }
                 }
             }
