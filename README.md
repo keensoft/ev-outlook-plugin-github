@@ -9,6 +9,8 @@ Visit us at https://www.eisenvault.com
 
 Note: This also works with self-signed certificates and trusted SSL Certificates (not self signed ones). This does not work with Alfresco Cloud (my.alfresco.com).
 
+**Added support for Spanish based Alfresco servers**
+
 # Patching instructions
 
 In order to allow self-signed certificates for HTTPs Alfresco servers, you can install the product as is. Once it's working, you can replace the patched DDL `EisenVaultOutlookPlugin.Data.dll` available in ZIP format at `Installer-Binaries` directory
